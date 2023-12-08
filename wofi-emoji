@@ -2,7 +2,8 @@
 set -euo pipefail
 
 EMOJI="$(sed '1,/^### DATA ###$/d' $0 | wofi -p "emoji" --show dmenu -i | cut -d ' ' -f 1 | tr -d '\n')"
-wtype "$EMOJI"; wl-copy "$EMOJI"
+wtype "$EMOJI" || true
+wl-copy "$EMOJI" || true
 exit
 ### DATA ###
 😀 grinning face face smile happy joy :D grin

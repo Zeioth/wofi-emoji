@@ -8,7 +8,7 @@ It relies on [wtype](https://github.com/atx/wtype) when it's supported, otherwis
 
 ## Usage with Sway
 
-Download [wofi-emoji](https://github.com/dln/wofi-emoji/raw/master/wofi-emoji), ensure it's executable and somewhere in your `$PATH`.
+Download [wofi-emoji](https://github.com/Zeioth/wofi-emoji/raw/master/wofi-emoji), ensure it's executable and somewhere in your `$PATH`.
 
 Add a shortcut key in your [sway](https://swaywm.org/) config:
 

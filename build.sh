@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 sed -i '/^### DATA ###$/q' wofi-emoji
 
 curl https://raw.githubusercontent.com/muan/emojilib/v3.0.10/dist/emoji-en-US.json \

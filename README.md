@@ -25,3 +25,6 @@ bindsym Mod4+e exec path/to/wofi-emoji
 
 ## 🌟 Support the project
 Star this repository and vote the [AUR package](https://aur.archlinux.org/packages/wofi-emoji) to increase the visibility of the project.
+
+## Roadmap
+This project is community driven. If you have a proposal, send a PR and I will review it.

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
+WOFI_ARGS="$@"
 
-EMOJI="$(sed '1,/^### DATA ###$/d' $0 | wofi -p "emoji" --show dmenu -i | cut -d ' ' -f 1 | tr -d '\n')"
+EMOJI="$(sed '1,/^### DATA ###$/d' $0 | wofi -p "Search Emoji" $WOFI_ARGS --show dmenu -i | cut -d ' ' -f 1 | tr -d '\n')"
 wtype "$EMOJI"; wl-copy "$EMOJI"
 exit
 ### DATA ###

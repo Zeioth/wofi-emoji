@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-EMOJI="$(sed '1,/^### DATA ###$/d' $0 | wofi -p "emoji" --show dmenu -i | cut -d ' ' -f 1 | tr -d '\n')"
+EMOJI="$(sed '1,/^### DATA ###$/d' $0 | wofi -I --matching multi-contains --insensitive -p "Search Emoji" --show dmenu -i | cut -d ' ' -f 1 | tr -d '\n')"
 wtype "$EMOJI"; wl-copy "$EMOJI"
 exit
 ### DATA ###
@@ -37,12 +37,12 @@ exit
 🤫 shushing face face quiet shhh
 🤔 thinking face face hmmm think consider
 🤐 zipper mouth face face sealed zipper secret
-🤨 face with raised eyebrow face distrust scepticism disapproval disbelief surprise
+🤨 face with raised eyebrow face distrust scepticism disapproval disbelief surprise suspicious
 😐 neutral face indifference meh :| neutral
 😑 expressionless face face indifferent - - meh deadpan
-😶 face without mouth face hellokitty
+😶 face without mouth face
 😏 smirking face face smile mean prank smug sarcasm
-😒 unamused face indifference bored straight face serious sarcasm unimpressed skeptical dubious side eye
+😒 unamused face indifference bored straight face serious sarcasm unimpressed skeptical dubious ugh side eye
 🙄 face with rolling eyes face eyeroll frustrated
 😬 grimacing face face grimace teeth
 🤥 lying face face lie pinocchio
@@ -82,7 +82,7 @@ exit
 😰 anxious face with sweat face nervous sweat
 😥 sad but relieved face face phew sweat nervous
 😢 crying face face tears sad depressed upset :'(
-😭 loudly crying face face cry tears sad upset depressed
+😭 loudly crying face sobbing face cry tears sad upset depressed
 😱 face screaming in fear face munch scared omg
 😖 confounded face face confused sick unwell oops :S
 😣 persevering face face sick no upset oops
@@ -91,13 +91,13 @@ exit
 😩 weary face face tired sleepy sad frustrated upset
 😫 tired face sick whine upset frustrated
 🥱 yawning face tired sleepy
-😤 face with steam from nose face gas phew proud pride
+😤 face with steam from nose face gas phew proud pride triumph
 😡 pouting face angry mad hate despise
 😠 angry face mad face annoyed frustrated
 🤬 face with symbols on mouth face swearing cursing cussing profanity expletive
 😈 smiling face with horns devil horns
 👿 angry face with horns devil angry horns
-💀 skull dead skeleton creepy death
+💀 skull dead skeleton creepy death dead
 ☠️ skull and crossbones poison danger deadly scary death pirate evil
 💩 pile of poo hankey shitface fail turd shit
 🤡 clown face face
@@ -140,9 +140,9 @@ exit
 🤎 brown heart coffee
 🖤 black heart evil
 🤍 white heart pure
-💯 hundred points score perfect numbers century exam quiz test pass hundred
+💯 hundred points score perfect numbers century exam quiz test pass hundred 100
 💢 anger symbol angry mad
-💥 collision bomb explode explosion collision blown
+💥 collision bomb explode explosion blown
 💫 dizzy star sparkle shoot magic
 💦 sweat droplets water drip oops
 💨 dashing away wind air fast shoo fart smoke puff
@@ -154,7 +154,7 @@ exit
 🗯️ right anger bubble caption speech thinking mad
 💭 thought balloon bubble cloud speech thinking dream
 💤 zzz sleepy tired dream
-👋 waving hand hands gesture goodbye solong farewell hello hi palm
+👋 waving hand wave hands gesture goodbye solong farewell hello hi palm
 🤚 raised back of hand fingers raised backhand
 🖐️ hand with fingers splayed hand fingers palm
 ✋ raised hand fingers stop highfive palm ban
@@ -185,7 +185,7 @@ exit
 🤝 handshake agreement shake
 🙏 folded hands please hope wish namaste highfive pray thank you thanks appreciate
 ✍️ writing hand lower left ballpoint pen stationery write compose
-💅 nail polish beauty manicure finger fashion nail
+💅 nail polish nail care beauty manicure finger fashion nail slay
 🤳 selfie camera phone
 💪 flexed biceps arm flex hand summer strong biceps
 🦾 mechanical arm accessibility
@@ -201,12 +201,12 @@ exit
 👀 eyes look watch stalk peek see
 👁️ eye face look see watch stare
 👅 tongue mouth playful
-👄 mouth mouth kiss
+👄 mouth kiss
 👶 baby child boy girl toddler
 🧒 child gender-neutral young
 👦 boy man male guy teenager
 👧 girl female woman teenager
-🧑 person gender-neutral person
+🧑 person gender-neutral
 👱 person blond hair hairstyle
 👨 man mustache father dad guy classy sir moustache
 🧔 man beard person bewhiskered
@@ -309,7 +309,7 @@ exit
 👮 police officer cop
 👮‍♂️ man police officer man police law legal enforcement arrest 911
 👮‍♀️ woman police officer woman police law legal enforcement arrest 911 female
-🕵️ detective human spy detective
+🕵️ detective human spy
 🕵️‍♂️ man detective crime
 🕵️‍♀️ woman detective human spy detective female woman
 💂 guard protect
@@ -420,12 +420,12 @@ exit
 🏋️ person lifting weights sports training exercise
 🏋️‍♂️ man lifting weights sport
 🏋️‍♀️ woman lifting weights sports training exercise woman female
-🚴 person biking sport move
-🚴‍♂️ man biking sports bike exercise hipster
-🚴‍♀️ woman biking sports bike exercise hipster woman female
-🚵 person mountain biking sport move
-🚵‍♂️ man mountain biking transportation sports human race bike
-🚵‍♀️ woman mountain biking transportation sports human race bike woman female
+🚴 person biking bicycle bike cyclist sport move
+🚴‍♂️ man biking bicycle bike cyclist sports exercise hipster
+🚴‍♀️ woman biking bicycle bike cyclist sports exercise hipster woman female
+🚵 person mountain biking bicycle bike cyclist sport move
+🚵‍♂️ man mountain biking bicycle bike cyclist transportation sports human race
+🚵‍♀️ woman mountain biking bicycle bike cyclist transportation sports human race woman female
 🤸 person cartwheeling sport gymnastic
 🤸‍♂️ man cartwheeling gymnastics
 🤸‍♀️ woman cartwheeling gymnastics
@@ -540,7 +540,7 @@ exit
 🦇 bat animal nature blind vampire
 🐻 bear animal nature wild
 🐨 koala animal nature
-🐼 panda animal nature panda
+🐼 panda animal nature
 🦥 sloth animal
 🦦 otter animal
 🦨 skunk animal
@@ -587,7 +587,7 @@ exit
 🐜 ant animal insect nature bug
 🐝 honeybee animal insect nature bug spring honey
 🐞 lady beetle animal insect nature ladybug
-🦗 cricket animal cricket chirp
+🦗 cricket animal chirp
 🕷️ spider animal arachnid
 🕸️ spider web animal insect arachnid silk
 🦂 scorpion animal arachnid
@@ -678,14 +678,14 @@ exit
 🧂 salt condiment shaker
 🥫 canned food food soup tomatoes
 🍱 bento box food japanese box lunch
-🍘 rice cracker food japanese snack
-🍙 rice ball food japanese
+🍘 rice cracker food japanese snack senbei
+🍙 rice ball food japanese onigiri omusubi
 🍚 cooked rice food asian
 🍛 curry rice food spicy hot indian
 🍜 steaming bowl food japanese noodle chopsticks ramen
 🍝 spaghetti food italian pasta noodle
 🍠 roasted sweet potato food nature plant
-🍢 oden food japanese
+🍢 oden skewer food japanese
 🍣 sushi food fish japanese rice
 🍤 fried shrimp food animal appetizer summer
 🍥 fish cake with swirl food japan sea beach narutomaki pink swirl kamaboko surimi ramen
@@ -711,7 +711,7 @@ exit
 🍫 chocolate bar food snack dessert sweet
 🍬 candy snack dessert sweet lolly
 🍭 lollipop food snack candy sweet
-🍮 custard dessert food
+🍮 custard dessert food pudding flan
 🍯 honey pot bees sweet kitchen
 🍼 baby bottle food container milk
 🥛 glass of milk beverage drink cow
@@ -736,9 +736,9 @@ exit
 🥄 spoon cutlery kitchen tableware
 🔪 kitchen knife knife blade cutlery kitchen weapon
 🏺 amphora vase jar
-🌍 globe showing europe africa globe world international
-🌎 globe showing americas globe world USA international
-🌏 globe showing asia australia globe world east international
+🌍 globe showing europe africa globe world earth international
+🌎 globe showing americas globe world USA earth international
+🌏 globe showing asia australia globe world east earth international
 🌐 globe with meridians earth international world internet interweb i18n
 🗺️ world map location direction
 🗾 map of japan nation country japanese asia
@@ -832,7 +832,7 @@ exit
 🦽 manual wheelchair accessibility
 🦼 motorized wheelchair accessibility
 🛺 auto rickshaw move transportation
-🚲 bicycle sports bicycle exercise hipster
+🚲 bicycle bike sports exercise hipster
 🛴 kick scooter vehicle kick razor
 🛹 skateboard board
 🚏 bus stop transportation wait
@@ -938,7 +938,7 @@ exit
 ☂️ umbrella weather spring
 ☔ umbrella with rain drops rainy weather spring
 ⛱️ umbrella on ground weather summer
-⚡ high voltage thunder weather lightning bolt fast
+⚡ high voltage thunder weather lightning bolt fast zap
 ❄️ snowflake winter season cold weather christmas xmas
 ☃️ snowman winter season cold weather christmas xmas frozen
 ⛄ snowman without snow winter season cold weather christmas xmas frozen without snow
@@ -1049,7 +1049,7 @@ exit
 👜 handbag fashion accessory accessories shopping
 👝 clutch bag bag accessories shopping
 🛍️ shopping bags mall buy purchase
-🎒 backpack student education bag backpack
+🎒 backpack student education bag
 👞 man s shoe fashion male
 👟 running shoe shoes sports sneakers
 🥾 hiking boot backpacking camping hiking
@@ -1095,13 +1095,13 @@ exit
 🥁 drum music instrument drumsticks snare
 📱 mobile phone technology apple gadgets dial
 📲 mobile phone with arrow iphone incoming
-☎️ telephone technology communication dial telephone
+☎️ telephone technology communication dial
 📞 telephone receiver technology communication dial
 📟 pager bbcall oldschool 90s
 📠 fax machine communication technology
 🔋 battery power energy sustain
 🔌 electric plug charger power
-💻 laptop technology laptop screen display monitor
+💻 laptop technology screen display monitor
 🖥️ desktop computer technology computing screen
 🖨️ printer paper ink
 ⌨️ keyboard technology computer type input text
@@ -1116,7 +1116,7 @@ exit
 🎞️ film frames movie
 📽️ film projector video tape record movie
 🎬 clapper board movie film record
-📺 television technology program oldschool show television
+📺 television technology program oldschool show
 📷 camera gadgets photography
 📸 camera with flash photography gadgets
 📹 video camera film record
@@ -1180,7 +1180,7 @@ exit
 📁 file folder documents business office
 📂 open file folder documents load
 🗂️ card index dividers organizing business stationery
-📅 calendar calendar schedule
+📅 calendar schedule
 📆 tear off calendar schedule date planning
 🗒️ spiral notepad memo stationery
 🗓️ spiral calendar date schedule planning
@@ -1212,7 +1212,7 @@ exit
 🛠️ hammer and wrench tools build create
 🗡️ dagger weapon
 ⚔️ crossed swords weapon
-🔫 pistol violence weapon pistol revolver
+🔫 pistol violence weapon revolver
 🏹 bow and arrow sports
 🛡️ shield protection security
 🔧 wrench tools diy ikea fix maintainer
@@ -1254,10 +1254,10 @@ exit
 🧽 sponge absorbing cleaning porous
 🧯 fire extinguisher quench
 🛒 shopping cart trolley
-🚬 cigarette kills tobacco cigarette joint smoke
+🚬 cigarette kills tobacco joint smoke
 ⚰️ coffin vampire dead die death rip graveyard cemetery casket funeral box
 ⚱️ funeral urn dead die death rip ashes
-🗿 moai rock easter island moai
+🗿 moai rock easter island
 🏧 atm sign money sales cash blue-square payment bank
 🚮 litter in bin sign blue-square sign human info
 🚰 potable water blue-square liquid restroom cleaning faucet
@@ -1275,7 +1275,7 @@ exit
 🚸 children crossing school warning danger sign driving yellow-diamond
 ⛔ no entry limit security privacy bad denied stop circle
 🚫 prohibited forbid stop limit denied disallow circle
-🚳 no bicycles cyclist prohibited circle
+🚳 no bicycles no bikes bicycle bike cyclist prohibited circle
 🚭 no smoking cigarette blue-square smell smoke
 🚯 no littering trash bin garbage circle
 🚱 non potable water drink faucet tap circle
@@ -1324,7 +1324,7 @@ exit
 ♌ leo sign purple-square zodiac astrology
 ♍ virgo sign zodiac purple-square astrology
 ♎ libra sign purple-square zodiac astrology
-♏ scorpio sign zodiac purple-square astrology scorpio
+♏ scorpio sign zodiac purple-square astrology
 ♐ sagittarius sign zodiac purple-square astrology
 ♑ capricorn sign zodiac purple-square astrology
 ♒ aquarius sign purple-square zodiac astrology
@@ -1391,19 +1391,19 @@ exit
 ™️ trade mark trademark brand law legal
 #️⃣ keycap  symbol blue-square twitter
 *️⃣ keycap  star keycap
-0️⃣ keycap 0 0 numbers blue-square null
-1️⃣ keycap 1 blue-square numbers 1
-2️⃣ keycap 2 numbers 2 prime blue-square
-3️⃣ keycap 3 3 numbers prime blue-square
-4️⃣ keycap 4 4 numbers blue-square
-5️⃣ keycap 5 5 numbers blue-square prime
-6️⃣ keycap 6 6 numbers blue-square
-7️⃣ keycap 7 7 numbers blue-square prime
-8️⃣ keycap 8 8 blue-square numbers
-9️⃣ keycap 9 blue-square numbers 9
-🔟 keycap 10 numbers 10 blue-square
-🔠 input latin uppercase alphabet words blue-square
-🔡 input latin lowercase blue-square alphabet
+0️⃣ keycap 0 0 numbers blue-square null zero
+1️⃣ keycap 1 blue-square numbers 1 one
+2️⃣ keycap 2 numbers 2 prime blue-square two
+3️⃣ keycap 3 3 numbers prime blue-square three
+4️⃣ keycap 4 4 numbers blue-square four
+5️⃣ keycap 5 5 numbers blue-square prime five
+6️⃣ keycap 6 6 numbers blue-square six
+7️⃣ keycap 7 7 numbers blue-square prime seven
+8️⃣ keycap 8 8 blue-square numbers eight
+9️⃣ keycap 9 blue-square numbers 9 nine
+🔟 keycap 10 numbers 10 blue-square ten
+🔠 input latin uppercase alphabet words letters uppercase blue-square
+🔡 input latin lowercase blue-square letters lowercase alphabet
 🔢 input numbers numbers blue-square 1234 1 2 3 4
 🔣 input symbols blue-square music note ampersand percent glyphs characters
 🔤 input latin letters blue-square alphabet
@@ -1480,7 +1480,7 @@ exit
 🎌 crossed flags japanese nation country border
 🏴 black flag pirate
 🏳️ white flag losing loser lost surrender give up fail
-🏳️‍🌈 rainbow flag flag rainbow pride gay lgbt glbt queer homosexual lesbian bisexual transgender
+🏳️‍🌈 rainbow flag flag rainbow pride gay lgbt queer homosexual lesbian bisexual
 🏴‍☠️ pirate flag skull crossbones flag banner
 🇦🇨 flag ascension island
 🇦🇩 flag andorra ad flag nation country banner andorra
@@ -1530,7 +1530,7 @@ exit
 🇨🇰 flag cook islands cook islands flag nation country banner cook islands
 🇨🇱 flag chile flag nation country banner chile
 🇨🇲 flag cameroon cm flag nation country banner cameroon
-🇨🇳 flag china china chinese prc flag country nation banner china
+🇨🇳 flag china china chinese prc flag country nation banner
 🇨🇴 flag colombia co flag nation country banner colombia
 🇨🇵 flag clipperton island
 🇨🇷 flag costa rica costa rica flag nation country banner costa rica
@@ -1553,15 +1553,15 @@ exit
 🇪🇬 flag egypt eg flag nation country banner egypt
 🇪🇭 flag western sahara western sahara flag nation country banner western sahara
 🇪🇷 flag eritrea er flag nation country banner eritrea
-🇪🇸 flag spain spain flag nation country banner spain
+🇪🇸 flag spain spain flag nation country banner
 🇪🇹 flag ethiopia et flag nation country banner ethiopia
 🇪🇺 flag european union european union flag banner
 🇫🇮 flag finland fi flag nation country banner finland
 🇫🇯 flag fiji fj flag nation country banner fiji
 🇫🇰 flag falkland islands falkland islands malvinas flag nation country banner falkland islands
-🇫🇲 flag micronesia micronesia federated states flag nation country banner micronesia
+🇫🇲 flag micronesia micronesia federated states flag nation country banner
 🇫🇴 flag faroe islands faroe islands flag nation country banner faroe islands
-🇫🇷 flag france banner flag nation france french country france
+🇫🇷 flag france banner flag nation france french country
 🇬🇦 flag gabon ga flag nation country banner gabon
 🇬🇧 flag united kingdom united kingdom great britain northern ireland flag nation country banner british UK english england union jack united kingdom
 🇬🇩 flag grenada gd flag nation country banner grenada
@@ -1595,9 +1595,9 @@ exit
 🇮🇳 flag india in flag nation country banner india
 🇮🇴 flag british indian ocean territory british indian ocean territory flag nation country banner british indian ocean territory
 🇮🇶 flag iraq iq flag nation country banner iraq
-🇮🇷 flag iran iran islamic republic flag nation country banner iran
+🇮🇷 flag iran iran islamic republic flag nation country banner
 🇮🇸 flag iceland is flag nation country banner iceland
-🇮🇹 flag italy italy flag nation country banner italy
+🇮🇹 flag italy italy flag nation country banner
 🇯🇪 flag jersey je flag nation country banner jersey
 🇯🇲 flag jamaica jm flag nation country banner jamaica
 🇯🇴 flag jordan jo flag nation country banner jordan
@@ -1626,7 +1626,7 @@ exit
 🇱🇾 flag libya ly flag nation country banner libya
 🇲🇦 flag morocco ma flag nation country banner morocco
 🇲🇨 flag monaco mc flag nation country banner monaco
-🇲🇩 flag moldova moldova republic flag nation country banner moldova
+🇲🇩 flag moldova moldova republic flag nation country banner
 🇲🇪 flag montenegro me flag nation country banner montenegro
 🇲🇫 flag st martin
 🇲🇬 flag madagascar mg flag nation country banner madagascar
@@ -1713,11 +1713,11 @@ exit
 🇹🇲 flag turkmenistan flag nation country banner turkmenistan
 🇹🇳 flag tunisia tn flag nation country banner tunisia
 🇹🇴 flag tonga to flag nation country banner tonga
-🇹🇷 flag turkey turkey flag nation country banner turkey
+🇹🇷 flag turkey turkey flag nation country banner
 🇹🇹 flag trinidad tobago trinidad tobago flag nation country banner trinidad tobago
 🇹🇻 flag tuvalu flag nation country banner tuvalu
 🇹🇼 flag taiwan tw flag nation country banner taiwan
-🇹🇿 flag tanzania tanzania united republic flag nation country banner tanzania
+🇹🇿 flag tanzania tanzania united republic flag nation country banner
 🇺🇦 flag ukraine ua flag nation country banner ukraine
 🇺🇬 flag uganda ug flag nation country banner uganda
 🇺🇲 flag u s outlying islands
@@ -1808,8 +1808,8 @@ exit
 🪥 toothbrush hygiene dental
 🪦 headstone death rip grave
 🪧 placard announcement
-⚧️ transgender symbol lgbtq
-🏳️‍⚧️ transgender flag lgbtq
+⚧️ transgender symbol transgender lgbtq
+🏳️‍⚧️ transgender flag transgender flag pride lgbtq
 😶‍🌫️ face in clouds shower steam dream
 😮‍💨 face exhaling relieve relief tired sigh
 😵‍💫 face with spiral eyes sick ill confused nauseous nausea
@@ -1875,3 +1875,31 @@ exit
 🪈 flute bamboo music instrument pied piper
 🪯 khanda Sikhism religion
 🛜 wireless wifi internet contactless signal
+🙂‍↔️ head shaking horizontally disapprove indiffernt left
+🙂‍↕️ head shaking vertically down nod
+🚶‍➡️ person walking facing right peerson exercise
+🚶‍♀️‍➡️ woman walking facing right person exercise
+🚶‍♂️‍➡️ man walking facing right person exercise
+🧎‍➡️ person kneeling facing right pray
+🧎‍♀️‍➡️ woman kneeling facing right pray worship
+🧎‍♂️‍➡️ man kneeling facing right pray worship
+🧑‍🦯‍➡️ person with white cane facing right walk walk visually impaired blind
+👨‍🦯‍➡️ man with white cane facing right visually impaired blind walk stick
+👩‍🦯‍➡️ woman with white cane facing right stick visually impaired blind
+🧑‍🦼‍➡️ person in motorized wheelchair facing right accessibility disability
+👨‍🦼‍➡️ man in motorized wheelchair facing right disability accessibility mobility
+👩‍🦼‍➡️ woman in motorized wheelchair facing right mobility accessibility disability
+🧑‍🦽‍➡️ person in manual wheelchair facing right mobility accessibility disability
+👨‍🦽‍➡️ man in manual wheelchair facing right mobility accessibility disability
+👩‍🦽‍➡️ woman in manual wheelchair facing right disability mobility accessibility
+🏃‍➡️ person running facing right exercise jog
+🏃‍♀️‍➡️ woman running facing right exercise jog
+🏃‍♂️‍➡️ man running facing right jog exercise
+🧑‍🧑‍🧒 family adult, adult, child kid parents
+🧑‍🧑‍🧒‍🧒 family adult, adult, child, child children parents
+🧑‍🧒 family adult, child parent kid
+🧑‍🧒‍🧒 family adult, child, child parent children
+🐦‍🔥 phoenix immortal bird mythtical reborn
+🍋‍🟩 lime fruit acidic citric
+🍄‍🟫 brown mushroom toadstool fungus
+⛓️‍💥 broken chain constraint break
